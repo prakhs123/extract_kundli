@@ -27,6 +27,42 @@ class Kundli(BaseModel):
 
 
 def process_kundli(image_path):
+    # Original code context around L53
+    prompt = (
+        "Extract information from the following astrological chart table image. The table has a specific 4x4 format with the following characteristics:\n\n"
+        "Structure:\n"
+        "- Total 13 distinct cells\n"
+        "- 12 outer cells arranged in a 4x4 grid\n"
+        "- 1 larger center cell (formed by merging the 4 center cells)\n"
+        "- The center cell spans positions [(2,2),(2,3),(3,2),(3,3)]\n\n"
+        "Cell Positions Reference:\n"
+        "Row 1: (1,1), (1,2), (1,3), (1,4)\n"
+        "Row 2: (2,1), [center cell], (2,4)\n"
+        "Row 3: (3,1), [center cell], (3,4)\n"
+        "Row 4: (4,1), (4,2), (4,3), (4,4)\n\n"
+        "Requirements:\n"
+        "1. Extract text from each cell maintaining exact formatting and numbers\n"
+        "2. Include all planetary positions, degrees, and astronomical notations\n"
+        "3. For the center cell, preserve any:\n"
+        "   - Questions or statements\n"
+        "   - Dates\n"
+        "   - Times\n"
+        "   - Locations\n"
+        "   - Coordinates\n"
+        "4. Note any empty cells explicitly\n"
+        "5. Maintain the original sequence of information within each cell\n"
+        "6. Preserve all numerical values, including degrees, minutes, and seconds\n"
+        "7. Keep all planetary symbols and their corresponding positions\n\n"
+        "Please format the output as:\n"
+        "1st Cell (1,1): [content]\n"
+        "2nd Cell (1,2): [content]\n"
+        "[...]n12th Cell (4,4): [content]\n"
+        "Center Cell: [content]\n"
+        "If any cell is empty, print empty string"
+    )
+
+    # Rest of the code
+
     # determine the image format based on file extension
     image_extension = image_path.split('.')[-1].lower()
     if image_extension == 'jpg' or image_extension == 'jpeg':
@@ -51,7 +87,7 @@ def process_kundli(image_path):
                 "content": [
                     {
                         "type": "text",
-                        "text": "Extract information from the following astrological chart table image. The table has a specific 4x4 format with the following characteristics:\n\nStructure:\n- Total 13 distinct cells\n- 12 outer cells arranged in a 4x4 grid\n- 1 larger center cell (formed by merging the 4 center cells)\n- The center cell spans positions [(2,2),(2,3),(3,2),(3,3)]\n\nCell Positions Reference:\nRow 1: (1,1), (1,2), (1,3), (1,4)\nRow 2: (2,1), [center cell], (2,4)\nRow 3: (3,1), [center cell], (3,4)\nRow 4: (4,1), (4,2), (4,3), (4,4)\n\nRequirements:\n1. Extract text from each cell maintaining exact formatting and numbers\n2. Include all planetary positions, degrees, and astronomical notations\n3. For the center cell, preserve any:\n   - Questions or statements\n   - Dates\n   - Times\n   - Locations\n   - Coordinates\n4. Note any empty cells explicitly\n5. Maintain the original sequence of information within each cell\n6. Preserve all numerical values, including degrees, minutes, and seconds\n7. Keep all planetary symbols and their corresponding positions\n\nPlease format the output as:\n1st Cell (1,1): [content]\n2nd Cell (1,2): [content]\n[...]n12th Cell (4,4): [content]\nCenter Cell: [content]\n"
+                        "text": prompt[0]
                     },
                     {
                         "type": "image",
