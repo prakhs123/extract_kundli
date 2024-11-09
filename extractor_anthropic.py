@@ -27,6 +27,18 @@ class Kundli(BaseModel):
 
 
 def process_kundli(image_path):
+    # determine the image format based on file extension
+    image_extension = image_path.split('.')[-1].lower()
+    if image_extension == 'jpg' or image_extension == 'jpeg':
+        media_type = 'image/jpeg'
+    elif image_extension == 'png':
+        media_type = 'image/png'
+    elif image_extension == 'gif':
+        media_type = 'image/gif'
+    elif image_extension == 'webp':
+        media_type = 'image/webp'
+    else:
+        raise ValueError(f"Unsupported image format: {image_extension}")
     client = instructor.from_anthropic(Anthropic())
     base64_encoded_image = encode_image(image_path)
     # note that client.chat.completions.create will also work
@@ -45,8 +57,8 @@ def process_kundli(image_path):
                         "type": "image",
                         "source": {
                             "type": "base64",
-                            "media_type": "image/png",
-                            "data": f"{base64_encoded_image}"
+                            "media_type": media_type,
+                            "data": base64_encoded_image
                         }
                     }
                 ]
@@ -57,18 +69,18 @@ def process_kundli(image_path):
 
     assert isinstance(resp, Kundli)
     print(f"Kundli Center Text:\n{resp.center_cell}\n")
-    print(f"1st House:\n{resp.cell_1_1}\n")
-    print(f"2nd House:\n{resp.cell_1_2}\n")
-    print(f"3rd House:\n{resp.cell_1_3}\n")
-    print(f"4th House:\n{resp.cell_1_4}\n")
-    print(f"5th House:\n{resp.cell_2_4}\n")
-    print(f"6th House:\n{resp.cell_3_4}\n")
-    print(f"7th House:\n{resp.cell_4_4}\n")
-    print(f"8th House:\n{resp.cell_4_3}\n")
-    print(f"9th House:\n{resp.cell_4_2}\n")
-    print(f"10th House:\n{resp.cell_4_1}\n")
-    print(f"11th House:\n{resp.cell_3_1}\n")
-    print(f"12th House:\n{resp.cell_2_1}\n")
+    print(f"Aries/Mesha:\n{resp.cell_1_1}\n")
+    print(f"Taurus/Vrishaba:\n{resp.cell_1_2}\n")
+    print(f"Gemini/Mithun:\n{resp.cell_1_3}\n")
+    print(f"Cancer/Karka:\n{resp.cell_1_4}\n")
+    print(f"Leo/Simha:\n{resp.cell_2_4}\n")
+    print(f"Virgo/Kanya:\n{resp.cell_3_4}\n")
+    print(f"Libra/Thula:\n{resp.cell_4_4}\n")
+    print(f"Scorpio/Vrishchak:\n{resp.cell_4_3}\n")
+    print(f"Sagittarius/Dhanu:\n{resp.cell_4_2}\n")
+    print(f"Capricorn/Makar:\n{resp.cell_4_1}\n")
+    print(f"Aquarius/Kumba:\n{resp.cell_3_1}\n")
+    print(f"Pisces/Meena:\n{resp.cell_2_1}\n")
 
 
 if __name__ == "__main__":

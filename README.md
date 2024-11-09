@@ -1,6 +1,7 @@
 # Extract Kundli
 
 This project provides a tool to extract Kundli information from images using anthropic API
+Verified with Real Examples from photos taken from camera
 
 ## Requirements
 
