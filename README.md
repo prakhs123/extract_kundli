@@ -38,58 +38,65 @@ python extractor_anthropic.py /path/to/your/image.png
 
 ## Sample Output
 
-`python extractor_anthropic.py "imgs/img_1.png"`
+`python extractor_anthropic.py "imgs/img_4.png"`
 ```
 Kundli Center Text:
+20-8-1945 Monday
+11-31 p.m. (Actual I.S.T)
+12-31 A.M. (War-Time)
+Place : 12-30 N 75 E
+Ayanamsa : 22-59 (KP)
+Balance Dasa at Birth
+Sun Dasa
+4Y-11M-21D
 
+Aries/Mesha:
+XII 23-09
 
-1st House:
-Sat. 23-17
-VIII 6-21
+Taurus/Vrishaba:
+I.Asc. 27-30
 
-2nd House:
-IX 7-21
-Ura 22-57
+Gemini/Mithun:
+Uranus 24-00
+II 25-32
+Mars 25-52
 
-3rd House:
-Kethu 2-40
-X 8-21
-Merc 17-8
-Sun 28-37
+Cancer/Karka:
+Rahu 13-33
+III 21-28
+Ven. 25-37
+Sat. 26-59
 
-4th House:
-XI 8-38
-Mars 11-11
+Leo/Simha:
+IV 18-29
 
-5th House:
-Venus 0-35
-XII 8-21
+Virgo/Kanya:
+Merc. (R) 4-05
+Sun 4-20
+V 19-02
 
-6th House:
-Asc 7-55
-Nept 25-31
+Libra/Thula:
+Jup. 6-05
+Nep. 1-1-48
+For. 22-08
+VI 23-09
 
-7th House:
-II 6-21
+Scorpio/Vrishchak:
+VII 27-30
 
-8th House:
-III 7-21
+Sagittarius/Dhanu:
+VIII 25-32
 
-9th House:
-IV 8-21
-Rahu 2-40
+Capricorn/Makar:
+Moon 28-56-40
+IX 21-28
+Kethu 13-33
 
-10th House:
-V 8-38
-Moon 0-58
+Aquarius/Kumba:
+X 18-29
 
-11th House:
-VI 8-21
-
-12th House:
-Fort 10-16
-Jup 9-14
-VII 7-55
+Pisces/Meena:
+XI 19-02
 ```
 ## Images
 
