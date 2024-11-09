@@ -35,6 +35,61 @@ To run the script, use the following command:
 python extractor_anthropic.py /path/to/your/image.png
 ```
 
+## Sample Output
+
+`python extractor_anthropic.py "imgs/img_1.png"`
+```
+Kundli Center Text:
+
+
+1st House:
+Sat. 23-17
+VIII 6-21
+
+2nd House:
+IX 7-21
+Ura 22-57
+
+3rd House:
+Kethu 2-40
+X 8-21
+Merc 17-8
+Sun 28-37
+
+4th House:
+XI 8-38
+Mars 11-11
+
+5th House:
+Venus 0-35
+XII 8-21
+
+6th House:
+Asc 7-55
+Nept 25-31
+
+7th House:
+II 6-21
+
+8th House:
+III 7-21
+
+9th House:
+IV 8-21
+Rahu 2-40
+
+10th House:
+V 8-38
+Moon 0-58
+
+11th House:
+VI 8-21
+
+12th House:
+Fort 10-16
+Jup 9-14
+VII 7-55
+```
 ## Images
 
 The project contains images used for illustration purposes, located in the `imgs/` directory.
